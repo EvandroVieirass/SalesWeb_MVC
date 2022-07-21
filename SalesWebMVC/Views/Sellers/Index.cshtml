@@ -7,6 +7,9 @@
 }
 
 <h2>@ViewData["Title"]</h2>
+<p>
+    <a asp-action="Create" class="btn btn-default btn-success">Create New</a>
+</p>
 
 <table class="table table table-striped tabble table-hover">
     <thead>
@@ -16,6 +19,7 @@
             <th>@Html.DisplayNameFor(model => model.Email)</th>
             <th>@Html.DisplayNameFor(model => model.BaseSalary)</th>
             <th>@Html.DisplayNameFor(model => model.BirthDate)</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +31,11 @@
             <td>@Html.DisplayFor(modelItem => item.Email)</td>
             <td>@Html.DisplayFor(modelItem => item.BaseSalary)</td>
             <td>@Html.DisplayFor(modelItem => item.BirthDate)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
         </tr>
             }
     </tbody>
